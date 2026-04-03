@@ -18,7 +18,8 @@ spec:
       - name: app-python
         image: mickybamby/app-python:v1.0
         ports:
-        - containerPort: 80
+        - port: 8000
+          targetPort: 8000
         resources:
           limits:
             memory: "128Mi"
