@@ -9,8 +9,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/mickybamby/dev.git
-    targetRevision: main
-    path: dev
+    targetRevision: HEAD
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: my-python-app-prod 
