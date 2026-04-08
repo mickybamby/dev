@@ -17,7 +17,7 @@ spec:
       automountServiceAccountToken: false
       containers:
       - name: app-python
-        image: mickybamby/app-python:v1.0
+        image: mickybamby/app-python:v7
         ports:
         - containerPort: 8000    # container listens on 8000
         resources:
