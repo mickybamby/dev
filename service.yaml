@@ -2,11 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mike-python-service
+  namespace: default
 spec:
   selector:
-    app: app-python # Ensure this matches the labels in your deployment.yaml
+    app: app-python  # must match deployment labels
   ports:
-  - protocol: TCP
-    port: 8000
-    targetPort: 8000  # Adjust to match the container port in deployment.yaml
-  type: ClusterIP  # Change to LoadBalancer or NodePort if needed
+    - protocol: TCP
+      port: 8000         # this is the port clients connect to
+      targetPort: 8000    # this must match your pod containerPort
+  type: ClusterIP

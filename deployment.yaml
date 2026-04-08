@@ -14,16 +14,18 @@ spec:
       labels:
         app: app-python
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: app-python
         image: mickybamby/app-python:v1.0
         ports:
-        - port: 8000
-          targetPort: 8000
+        - containerPort: 8000    # container listens on 8000
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
+            ephemeral-storage: "512Mi"
           requests:
             memory: "64Mi"
             cpu: "250m"
+            ephemeral-storage: "256Mi"
